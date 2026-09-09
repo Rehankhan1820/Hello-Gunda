@@ -4,12 +4,36 @@ import Navbar from "../components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight, Users, Video, Eye, Award, Zap, Flame, Star,
-  Trophy, Swords, User, Mic, Crown, Gift, Tv, Users2,
-  Check, Shield, Sparkles, Gamepad2, Clock, Music,
-  TrendingUp, Heart, Play, Youtube, 
-  MapPin, Globe,
-  PlayCircle
+  ArrowRight,
+  Users,
+  Video,
+  Eye,
+  Award,
+  Zap,
+  Flame,
+  Star,
+  Trophy,
+  Swords,
+  User,
+  Mic,
+  Crown,
+  Gift,
+  Tv,
+  Users2,
+  Check,
+  Shield,
+  Sparkles,
+  Gamepad2,
+  Clock,
+  Music,
+  TrendingUp,
+  Heart,
+  Play,
+  Youtube,
+  MapPin,
+  Globe,
+  PlayCircle,
+  MessageCircle,
 } from "lucide-react";
 
 const STATS = [
@@ -72,298 +96,501 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-gradient-to-br from-[#0B0E14] via-[#141A24] to-[#1A1F2E] text-[#E8EDF5] font-sans overflow-x-hidden">
-
+      <main className="min-h-screen bg-[#080808] text-[#F5F1E8] font-['Inter',ui-sans-serif,system-ui,sans-serif]">
         {/* ========== HERO ========== */}
-        <section id="home" className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 text-center">
-          {/* Animated gradient orbs */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-red-500/10 via-orange-500/10 to-transparent rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-10 left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute bottom-20 right-20 w-60 h-60 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+        <section className="relative min-h-screen overflow-hidden px-6 pt-32 pb-20 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid items-center gap-16 lg:grid-cols-2">
+              {/* LEFT */}
+              <div className="relative z-10">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 bg-[#FF5A1F] animate-pulse" />
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                    Free Fire Creator
+                  </p>
+                </div>
 
-          {/* Avatar with glow ring */}
-          <div className="relative group">
-            <div className="absolute -inset-2 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 rounded-full blur-xl opacity-75 group-hover:opacity-100 transition duration-500" />
-            <div className="relative h-44 w-44 rounded-full border-2 border-white/20 overflow-hidden">
-              <Image
-                src="/logo.jpg"
-                alt="Hello Gunda"
-                width={300}
-                height={300}
-                className="h-full w-full object-cover"
-              />
+                <h1 className="mt-4 text-6xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+                  HELLO
+                  <br />
+                  <span className="text-[#FF5A1F]">GUNDA</span>
+                </h1>
+
+                <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#A7A29A]">
+                  India's Free Fire content creator. Bringing intense gameplay,
+                  funny moments, custom room battles, giveaways and daily
+                  entertainment to the squad.
+                </p>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <Link
+                    href="/youtube"
+                    className="inline-flex items-center bg-[#FF5A1F] px-8 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105 group"
+                  >
+                    SUBSCRIBE NOW
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    href="/guild"
+                    className="inline-flex items-center border border-[#F5F1E8] px-8 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                  >
+                    EXPLORE GUILD
+                  </Link>
+                </div>
+
+                {/* Quick Info */}
+                <div className="mt-12 flex flex-wrap items-center gap-8 border-t border-[#151515] pt-8">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                      UID
+                    </p>
+                    <p className="mt-1 font-mono text-lg font-semibold">
+                      1798292163
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                      Server
+                    </p>
+                    <p className="mt-1 text-lg font-semibold">India</p>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                      Role
+                    </p>
+                    <p className="mt-1 text-lg font-semibold text-[#FF5A1F]">
+                      Content Creator
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div className="relative lg:pl-8">
+                <div className="relative aspect-[4/3] overflow-hidden border border-[#151515] bg-[#0F0F0F]">
+                  <Image
+                    src="/logo.jpg"
+                    alt="HELLO GUNDA - Free Fire Creator and Gaming Community Leader"
+                    fill
+                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+
+                  {/* Decorative overlay */}
+                  <div className="absolute bottom-0 left-0 bg-[#080808]/90 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5A1F]">
+                      HELLO GUNDA
+                    </p>
+                    <p className="text-xs uppercase tracking-[0.15em] text-[#A7A29A]">
+                      Free Fire Creator
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-md px-4 py-1 rounded-full border border-white/10 text-xs text-gray-300 flex items-center gap-2">
-              <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              LIVE
-            </div>
-          </div>
-
-          {/* UID & Server */}
-          <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-            <span className="flex items-center gap-1"><Shield className="w-4 h-4" /> UID: 1798292163</span>
-            <span className="flex items-center gap-1"><Globe className="w-4 h-4" /> Server: India</span>
-          </div>
-
-          <h1 className="relative mt-6 text-5xl md:text-7xl font-bold tracking-tight">
-            WELCOME TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">HELLO GUNDA</span>
-          </h1>
-
-          <p className="relative mt-4 text-sm uppercase tracking-[0.3em] text-gray-400">
-            India's Free Fire Content Creator
-          </p>
-
-          <p className="relative mt-6 max-w-2xl text-lg leading-8 text-gray-300">
-            Bringing intense gameplay, funny moments, custom room battles, giveaways and daily entertainment.
-            Join the community and become part of the adventure.
-          </p>
-
-          <div className="relative mt-10 flex flex-wrap justify-center gap-5">
-            <Link href="/youtube">
-              <button className="group rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105 hover:shadow-orange-500/50">
-                Subscribe Now
-                <ArrowRight className="inline ml-2 w-4 h-4 group-hover:translate-x-1 transition" />
-              </button>
-            </Link>
-            <Link href="/guild">
-              <button className="rounded-full border border-white/20 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/40">
-                Explore Guild
-              </button>
-            </Link>
-          </div>
-
-          {/* floating badges */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-6 text-xs text-gray-500">
-            <span className="flex items-center gap-1"><Star className="w-3 h-3 text-orange-400" /> Top Creator</span>
-            <span className="flex items-center gap-1"><Flame className="w-3 h-3 text-red-400" /> Trending</span>
           </div>
         </section>
 
         {/* ========== STATS ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            {STATS.map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.label}
-                  className="group relative bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50"
-                >
-                  <Icon className="w-8 h-8 mx-auto text-orange-400 group-hover:scale-110 transition" />
-                  <p className="mt-3 text-3xl font-bold text-white">{s.value}</p>
-                  <p className="text-sm uppercase tracking-widest text-gray-400">{s.label}</p>
-                </div>
-              );
-            })}
+        <section className="border-y border-[#151515] px-6 py-20 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+              {STATS.map((s) => {
+                const Icon = s.icon;
+                return (
+                  <div
+                    key={s.label}
+                    className="text-center border-b border-[#151515] pb-6 last:border-0 md:border-b-0 md:border-r md:pb-0"
+                  >
+                    <Icon className="mx-auto h-8 w-8 text-[#FF5A1F]" />
+                    <p className="mt-3 text-4xl font-black text-[#FF5A1F] md:text-5xl">
+                      {s.value}
+                    </p>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-[#A7A29A]">
+                      {s.label}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ========== ABOUT ========== */}
-        <section id="about" className="mx-auto max-w-6xl px-6 py-20">
-          <div className="grid gap-10 md:grid-cols-[1fr_2fr] items-center">
-            <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6">
-              <p className="text-xs uppercase tracking-widest text-gray-400">Squad Tag</p>
-              <p className="mt-1 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">[HG]</p>
-              <div className="mt-6 space-y-3 text-sm text-gray-300">
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-gray-400">UID</span>
-                  <span>1798292163</span>
-                </div>
-                <div className="flex justify-between border-b border-white/5 pb-2">
-                  <span className="text-gray-400">Server</span>
-                  <span>India</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-400">Role</span>
-                  <span>Content Creator</span>
-                </div>
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                  About
+                </p>
+                <h2 className="mt-4 text-4xl font-black leading-[1.1] tracking-tight md:text-5xl">
+                  WHO IS
+                  <br />
+                  <span className="text-[#FF5A1F]">HELLO GUNDA?</span>
+                </h2>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-lg leading-relaxed text-[#A7A29A]">
+                  Hello Gunda is a Free Fire gaming creator focused on exciting
+                  gameplay, epic battles, entertaining videos and an active
+                  gaming community.
+                </p>
+                <p className="text-lg leading-relaxed text-[#A7A29A]">
+                  Whether it's ranked matches, custom rooms, funny moments or
+                  challenges, the goal is to create enjoyable content for every
+                  gaming fan.
+                </p>
               </div>
             </div>
 
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">WHO IS HELLO GUNDA?</h2>
-              <p className="mt-4 text-lg leading-9 text-gray-300">
-                Hello Gunda is a Free Fire gaming creator focused on exciting gameplay,
-                epic battles, entertaining videos and an active gaming community.
-                <br /><br />
-                Whether it's ranked matches, custom rooms, funny moments or challenges,
-                the goal is to create enjoyable content for every gaming fan.
-              </p>
+            {/* Squad Tag */}
+            <div className="mt-16 border-t border-[#151515] pt-12">
+              <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                    Squad Tag
+                  </p>
+                  <p className="mt-2 text-3xl font-black text-[#FF5A1F]">
+                    [HG]
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                    UID
+                  </p>
+                  <p className="mt-2 font-mono text-xl font-bold">
+                    1798292163
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                    Server
+                  </p>
+                  <p className="mt-2 text-xl font-bold">India</p>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-[#A7A29A]">
+                    Role
+                  </p>
+                  <p className="mt-2 text-xl font-bold text-[#FF5A1F]">
+                    Content Creator
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ========== GAMING CATEGORIES ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white">🔥 Gaming Categories</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            {GAMING_CATEGORIES.map((cat) => {
-              const Icon = cat.icon;
-              return (
-                <div
-                  key={cat.label}
-                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50"
-                >
-                  <div className={`w-12 h-12 mx-auto rounded-full bg-gradient-to-r ${cat.color} flex items-center justify-center`}>
-                    <Icon className="w-6 h-6 text-white" />
+        <section className="bg-[#0F0F0F] px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                Content
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                GAMING CATEGORIES
+              </h2>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+              {GAMING_CATEGORIES.map((cat) => {
+                const Icon = cat.icon;
+                return (
+                  <div
+                    key={cat.label}
+                    className="group border border-[#151515] bg-[#080808] p-6 text-center transition-all hover:border-[#FF5A1F] hover:-translate-y-1"
+                  >
+                    <div
+                      className={`mx-auto flex h-14 w-14 items-center justify-center bg-gradient-to-r ${cat.color}`}
+                    >
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+                    <p className="mt-4 text-sm font-semibold text-[#F5F1E8]">
+                      {cat.label}
+                    </p>
                   </div>
-                  <p className="mt-3 text-sm font-semibold text-white">{cat.label}</p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ========== WHY JOIN ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-white">🏆 Why Join</h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                Benefits
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                WHY JOIN
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {WHY_JOIN.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-3 text-gray-300">
-                  <Check className="w-5 h-5 text-orange-400" />
-                  <span>{benefit}</span>
+                <div
+                  key={benefit}
+                  className="flex items-center gap-3 border border-[#151515] bg-[#0F0F0F] p-4"
+                >
+                  <Check className="h-4 w-4 text-[#FF5A1F]" />
+                  <span className="text-sm text-[#A7A29A]">{benefit}</span>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ========== GUILD ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <div className="relative bg-gradient-to-br from-orange-500/20 via-red-500/10 to-transparent border border-orange-500/30 rounded-3xl p-12 overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10">👑 HELLO GUNDA COMMUNITY</h2>
-            <p className="mt-4 text-xl text-gray-300 relative z-10">A place where every gamer is welcome.</p>
-            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-gray-300 relative z-10">
-              <span>Play together.</span>
-              <span>Learn together.</span>
-              <span>Grow together.</span>
-              <span>Win together.</span>
+        {/* ========== GUILD PROMOTION ========== */}
+        <section className="border-y border-[#151515] px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                  Community
+                </p>
+                <h2 className="mt-4 text-4xl font-black leading-[1.1] tracking-tight md:text-5xl">
+                  HELLO GUNDA
+                  <br />
+                  <span className="text-[#FF5A1F]">COMMUNITY</span>
+                </h2>
+                <p className="mt-6 text-lg leading-relaxed text-[#A7A29A]">
+                  A place where every gamer is welcome. Play together, learn
+                  together, grow together, win together.
+                </p>
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <div className="border border-[#151515] bg-[#0F0F0F] p-4 text-center">
+                    <p className="text-sm font-bold text-[#F5F1E8]">Play Together</p>
+                  </div>
+                  <div className="border border-[#151515] bg-[#0F0F0F] p-4 text-center">
+                    <p className="text-sm font-bold text-[#F5F1E8]">Learn Together</p>
+                  </div>
+                  <div className="border border-[#151515] bg-[#0F0F0F] p-4 text-center">
+                    <p className="text-sm font-bold text-[#F5F1E8]">Grow Together</p>
+                  </div>
+                  <div className="border border-[#151515] bg-[#0F0F0F] p-4 text-center">
+                    <p className="text-sm font-bold text-[#F5F1E8]">Win Together</p>
+                  </div>
+                </div>
+                <Link
+                  href="/guild"
+                  className="mt-8 inline-flex items-center bg-[#FF5A1F] px-8 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105 group"
+                >
+                  EXPLORE GUILD
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+
+              <div className="relative aspect-[4/3] overflow-hidden border border-[#151515] bg-[#0F0F0F]">
+                <Image
+                  src="/logo.jpg"
+                  alt="HELLO GUNDA Community and Guild"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5A1F]">
+                    Guild
+                  </p>
+                  <p className="text-2xl font-bold">HELLO GUNDA</p>
+                </div>
+              </div>
             </div>
-            <Link href="/guild">
-              <button className="mt-8 relative z-10 rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-10 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105">
-                Explore Guild
-              </button>
-            </Link>
           </div>
         </section>
 
         {/* ========== LATEST VIDEOS ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white">🎥 Latest Videos</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {LATEST_VIDEOS.map((title) => (
-              <div
-                key={title}
-                className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50"
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                Watch
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                LATEST VIDEOS
+              </h2>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+              {LATEST_VIDEOS.map((title) => (
+                <Link
+                  key={title}
+                  href="/youtube"
+                  className="group border border-[#151515] bg-[#0F0F0F] p-6 transition-all hover:border-[#FF5A1F] hover:-translate-y-1"
+                >
+                  <div className="flex items-center gap-3">
+                    <Play className="h-5 w-5 text-[#FF5A1F] transition-transform group-hover:scale-110" />
+                    <span className="text-sm text-[#F5F1E8]">{title}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/youtube"
+                className="inline-flex items-center text-[#FF5A1F] font-semibold transition-colors hover:text-[#E63946] group"
               >
-                <div className="flex items-center gap-3">
-                  <Play className="w-5 h-5 text-orange-400 group-hover:scale-110 transition" />
-                  <span className="text-sm text-gray-300">{title}</span>
-                </div>
-              </div>
-            ))}
+                WATCH ALL VIDEOS
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* ========== FEATURES ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white">💥 Features</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {FEATURES.map((feat) => {
-              const Icon = feat.icon;
-              return (
-                <div
-                  key={feat.label}
-                  className="flex items-center gap-4 bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl p-6 transition-all hover:bg-white/10"
-                >
-                  <Icon className="w-8 h-8 text-orange-400" />
-                  <span className="text-gray-300 font-medium">{feat.label}</span>
-                </div>
-              );
-            })}
+        <section className="bg-[#0F0F0F] px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                What We Offer
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                FEATURES
+              </h2>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+              {FEATURES.map((feat) => {
+                const Icon = feat.icon;
+                return (
+                  <div
+                    key={feat.label}
+                    className="flex items-center gap-4 border border-[#151515] bg-[#080808] p-6 transition-all hover:border-[#FF5A1F]"
+                  >
+                    <Icon className="h-8 w-8 text-[#FF5A1F]" />
+                    <span className="font-medium text-[#F5F1E8]">
+                      {feat.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ========== JOURNEY ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white">🌟 Journey</h2>
-          <div className="mt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            {JOURNEY.map((step, idx) => (
-              <div key={step} className="flex-1 text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-xl">
-                  {idx + 1}
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                Our Story
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                THE JOURNEY
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-5">
+              {JOURNEY.map((step, idx) => (
+                <div key={step} className="text-center">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center border border-[#FF5A1F] bg-[#0F0F0F]">
+                    <span className="text-2xl font-black text-[#FF5A1F]">
+                      {idx + 1}
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm text-[#A7A29A]">{step}</p>
                 </div>
-                <p className="mt-3 text-gray-300">{step}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ========== COMMUNITY ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl p-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white">❤️ Community</h2>
-            <p className="mt-4 text-lg text-gray-300">
-              Join thousands of Free Fire lovers.
-              <br />
-              Watch. Play. Compete. Enjoy.
+        <section className="border-y border-[#151515] px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl text-center">
+            <Heart className="mx-auto h-12 w-12 text-[#FF5A1F]" />
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">
+              COMMUNITY
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-[#A7A29A]">
+              Join thousands of Free Fire lovers. Watch. Play. Compete. Enjoy.
             </p>
           </div>
         </section>
 
         {/* ========== CTA ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-20 text-center">
-          <div className="relative bg-gradient-to-br from-orange-500/20 via-red-500/10 to-transparent border border-orange-500/30 rounded-3xl p-12 overflow-hidden">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-3xl" />
-            <h2 className="text-4xl md:text-5xl font-bold text-white relative z-10">🎯 Ready to Join?</h2>
-            <p className="mt-4 text-xl text-gray-300 relative z-10">
-              Become part of Hello Gunda and experience non-stop Free Fire entertainment.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-5 relative z-10">
-              <Link href="/youtube">
-                <button className="rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-10 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105">
-                  Subscribe
-                </button>
-              </Link>
-              <Link href="/guild">
-                <button className="rounded-full border border-white/20 px-10 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10">
-                  Join Guild
-                </button>
-              </Link>
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="border border-[#151515] bg-[#0F0F0F] px-8 py-16 text-center md:px-16 md:py-24">
+              <h2 className="text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                READY TO
+                <br />
+                <span className="text-[#FF5A1F]">JOIN THE SQUAD?</span>
+              </h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-[#A7A29A]">
+                Become part of Hello Gunda and experience non-stop Free Fire
+                entertainment.
+              </p>
+
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/youtube"
+                  className="inline-flex items-center bg-[#FF5A1F] px-10 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105"
+                >
+                  SUBSCRIBE NOW
+                </Link>
+                <Link
+                  href="/guild"
+                  className="inline-flex items-center border border-[#F5F1E8] px-10 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                >
+                  JOIN GUILD
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
         {/* ========== FOOTER ========== */}
-        <footer className="border-t border-white/10 py-12 text-center">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <footer className="border-t border-[#151515] px-6 py-12 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div>
-                <h3 className="text-2xl font-bold text-white">HELLO GUNDA</h3>
-                <p className="text-sm text-gray-400">Gaming • Entertainment • Community</p>
+                <p className="text-2xl font-black">HELLO GUNDA</p>
+                <p className="text-sm text-[#A7A29A]">
+                  Gaming • Entertainment • Community
+                </p>
               </div>
-              <div className="flex gap-4">
-                <Link href="/youtube" className="text-gray-400 hover:text-red-500 transition">
-                  <PlayCircle className="w-6 h-6" />
+
+              <div className="flex gap-6">
+                <Link
+                  href="/youtube"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  <PlayCircle className="h-6 w-6" />
                 </Link>
-                <Link href="/instagram" className="text-gray-400 hover:text-orange-400 transition">
-                  <PlayCircle className="w-6 h-6" />
+                <Link
+                  href="/instagram"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  <MessageCircle className="h-6 w-6" />
                 </Link>
-                <Link href="/twitter" className="text-gray-400 hover:text-blue-400 transition">
-                  <PlayCircle className="w-6 h-6" />
+                <Link
+                  href="/contact"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  Home
                 </Link>
               </div>
             </div>
-            <div className="mt-8 text-sm text-gray-500">
+
+            <div className="mt-8 border-t border-[#151515] pt-8 text-center text-sm text-[#A7A29A]">
               © 2026 Hello Gunda. All Rights Reserved.
             </div>
           </div>
         </footer>
-
       </main>
     </>
   );

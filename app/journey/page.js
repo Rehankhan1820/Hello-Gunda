@@ -1,11 +1,30 @@
 "use client";
 
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 import Link from "next/link";
 import {
-    ArrowRight, Gamepad2, Users, Video, Eye, TrendingUp,
-    Award, Crown, Star, Zap, Calendar, CheckCircle,
-    Sparkles, Rocket, Target, MapPin, MessageCircle, PlayCircle
+    ArrowRight,
+    Gamepad2,
+    Users,
+    Video,
+    Eye,
+    TrendingUp,
+    Award,
+    Crown,
+    Star,
+    Zap,
+    Calendar,
+    CheckCircle,
+    Sparkles,
+    Rocket,
+    Target,
+    MapPin,
+    MessageCircle,
+    PlayCircle,
+    Clock,
+    Flame,
+    Trophy,
 } from "lucide-react";
 
 const milestones = [
@@ -73,150 +92,260 @@ export default function JourneyPage() {
         <>
             <Navbar />
 
-            <main className="min-h-screen bg-gradient-to-br from-[#0B0E14] via-[#141A24] to-[#1A1F2E] text-[#E8EDF5] font-sans overflow-x-hidden">
-
+            <main className="min-h-screen bg-[#080808] text-[#F5F1E8]">
                 {/* ========== HERO ========== */}
-                <section className="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-24 text-center overflow-hidden">
-                    {/* Glowing orbs */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl animate-pulse" />
-                    <div className="absolute top-10 right-10 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-1000" />
-                    <div className="absolute bottom-10 left-10 w-56 h-56 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+                <section className="relative min-h-[70vh] overflow-hidden px-6 pt-32 pb-20 md:px-12 lg:px-20">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="grid items-center gap-16 lg:grid-cols-2">
+                            {/* LEFT */}
+                            <div className="relative z-10">
+                                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                                    Our Story
+                                </p>
 
-                    <div className="relative mb-8 p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-2xl shadow-orange-500/30">
-                        <Rocket className="w-16 h-16 text-white" />
-                    </div>
+                                <h1 className="mt-4 text-6xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+                                    THE
+                                    <br />
+                                    <span className="text-[#FF5A1F]">JOURNEY</span>
+                                </h1>
 
-                    <h1 className="relative text-5xl md:text-7xl font-bold tracking-tight">
-                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Journey</span>
-                    </h1>
-                    <p className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
-                        From a single gamer to a thriving community — every step of the way.
-                    </p>
-                    <div className="relative mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-                        <span className="flex items-center gap-1"><Calendar className="w-4 h-4 text-orange-400" /> Since 2020</span>
-                        <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-red-400" /> India</span>
+                                <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#A7A29A]">
+                                    From a single gamer to a thriving community — every step of the way.
+                                    This is the story of HELLO GUNDA.
+                                </p>
+
+                                <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#A7A29A]">
+                                    <span className="flex items-center gap-2">
+                                        <Calendar className="h-4 w-4 text-[#FF5A1F]" />
+                                        Since 2020
+                                    </span>
+                                    <span className="flex items-center gap-2">
+                                        <MapPin className="h-4 w-4 text-[#FF5A1F]" />
+                                        India
+                                    </span>
+                                    <span className="flex items-center gap-2">
+                                        <Clock className="h-4 w-4 text-[#FF5A1F]" />
+                                        6+ Years
+                                    </span>
+                                </div>
+
+                                <div className="mt-10 flex flex-wrap gap-4">
+                                    <Link
+                                        href="/guild"
+                                        className="group inline-flex items-center bg-[#FF5A1F] px-8 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105"
+                                    >
+                                        JOIN THE GUILD
+                                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                    </Link>
+                                    <Link
+                                        href="https://www.youtube.com/@HelloGunda"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center border border-[#F5F1E8] px-8 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                                    >
+                                        WATCH VIDEOS
+                                    </Link>
+                                </div>
+                            </div>
+
+                            {/* RIGHT */}
+                            <div className="relative lg:pl-8">
+                                <div className="relative aspect-[4/3] overflow-hidden border border-[#151515] bg-[#0F0F0F]">
+                                    <Image
+                                        src="/logo.jpg"
+                                        alt="HELLO GUNDA - The Journey from Gamer to Community Leader"
+                                        fill
+                                        className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                                        priority
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+
+                                    {/* Decorative overlay */}
+                                    <div className="absolute bottom-0 left-0 bg-[#080808]/90 px-4 py-3 backdrop-blur-sm">
+                                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5A1F]">
+                                            Since 2020
+                                        </p>
+                                        <p className="text-sm font-bold">HELLO GUNDA</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* ========== JOURNEY STATS ========== */}
-                <section className="mx-auto max-w-6xl px-6 py-10">
-                    <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-                        {journeyStats.map((stat) => {
-                            const Icon = stat.icon;
-                            return (
-                                <div
-                                    key={stat.label}
-                                    className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50"
-                                >
-                                    <div className={`w-12 h-12 mx-auto rounded-full bg-gradient-to-r ${stat.gradient} flex items-center justify-center`}>
-                                        <Icon className="w-6 h-6 text-white" />
+                <section className="border-y border-[#151515] px-6 py-20 md:px-12 lg:px-20">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+                            {journeyStats.map((stat) => {
+                                const Icon = stat.icon;
+                                return (
+                                    <div
+                                        key={stat.label}
+                                        className="border-b border-[#151515] pb-6 text-center last:border-0 md:border-b-0 md:border-r md:pb-0"
+                                    >
+                                        <div
+                                            className={`mx-auto flex h-14 w-14 items-center justify-center bg-gradient-to-r ${stat.gradient}`}
+                                        >
+                                            <Icon className="h-7 w-7 text-white" />
+                                        </div>
+                                        <p className="mt-3 text-4xl font-black text-[#FF5A1F] md:text-5xl">
+                                            {stat.value}
+                                        </p>
+                                        <p className="mt-1 text-sm uppercase tracking-[0.2em] text-[#A7A29A]">
+                                            {stat.label}
+                                        </p>
                                     </div>
-                                    <p className="mt-3 text-3xl font-bold text-white">{stat.value}</p>
-                                    <p className="text-sm uppercase tracking-widest text-gray-400">{stat.label}</p>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
                     </div>
                 </section>
 
                 {/* ========== TIMELINE ========== */}
-                <section className="mx-auto max-w-4xl px-6 py-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-16">
-                        Milestones
-                    </h2>
+                <section className="px-6 py-24 md:px-12 lg:px-20">
+                    <div className="mx-auto max-w-4xl">
+                        <div className="mb-16 text-center">
+                            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                                Milestones
+                            </p>
+                            <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                                THE PATH TO GREATNESS
+                            </h2>
+                        </div>
 
-                    <div className="relative">
-                        {/* Vertical line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-orange-500/50 via-red-500/50 to-transparent" />
+                        <div className="relative">
+                            {/* Vertical line */}
+                            <div className="absolute left-4 top-0 h-full w-px bg-gradient-to-b from-[#FF5A1F] via-[#E63946] to-transparent md:left-1/2 md:-translate-x-1/2" />
 
-                        {milestones.map((milestone, index) => {
-                            const Icon = milestone.icon;
-                            const isEven = index % 2 === 0;
-                            return (
-                                <div
-                                    key={milestone.year}
-                                    className={`relative flex flex-col md:flex-row items-center mb-16 last:mb-0 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
-                                        }`}
-                                >
-                                    {/* Timeline dot */}
-                                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-gradient-to-r from-orange-500 to-red-500 border-4 border-[#141A24] shadow-lg shadow-orange-500/30 z-10" />
-
-                                    {/* Content card */}
-                                    <div className={`w-full md:w-5/12 ${isEven ? "md:pr-12" : "md:pl-12"}`}>
-                                        <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50">
-                                            <div className="flex items-center gap-3">
-                                                <div className={`w-10 h-10 rounded-full bg-gradient-to-r ${milestone.color} flex items-center justify-center shrink-0`}>
-                                                    <Icon className="w-5 h-5 text-white" />
-                                                </div>
-                                                <div>
-                                                    <span className="text-xs uppercase tracking-widest text-orange-400">{milestone.year}</span>
-                                                    <h3 className="text-xl font-bold text-white">{milestone.title}</h3>
-                                                </div>
-                                            </div>
-                                            <p className="mt-3 text-gray-300 text-sm leading-relaxed">{milestone.description}</p>
+                            {milestones.map((milestone, index) => {
+                                const Icon = milestone.icon;
+                                const isEven = index % 2 === 0;
+                                return (
+                                    <div
+                                        key={milestone.year}
+                                        className={`relative mb-16 flex flex-col gap-6 last:mb-0 md:flex-row ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                                            }`}
+                                    >
+                                        {/* Timeline dot */}
+                                        <div className="absolute left-4 top-0 z-10 flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2 border-[#080808] bg-gradient-to-r from-[#FF5A1F] to-[#E63946] shadow-lg shadow-[#FF5A1F]/30 md:left-1/2">
+                                            <span className="text-xs font-bold text-[#080808]">
+                                                {index + 1}
+                                            </span>
                                         </div>
-                                    </div>
 
-                                    {/* Empty space for alternating */}
-                                    <div className="hidden md:block w-5/12" />
-                                </div>
-                            );
-                        })}
+                                        {/* Content card */}
+                                        <div className={`w-full pl-12 md:w-5/12 ${isEven ? "md:pr-8" : "md:pl-8"}`}>
+                                            <div className="group border border-[#151515] bg-[#0F0F0F] p-6 transition-all hover:-translate-y-1 hover:border-[#FF5A1F]">
+                                                <div className="flex items-center gap-3">
+                                                    <div
+                                                        className={`flex h-10 w-10 shrink-0 items-center justify-center bg-gradient-to-r ${milestone.color}`}
+                                                    >
+                                                        <Icon className="h-5 w-5 text-white" />
+                                                    </div>
+                                                    <div>
+                                                        <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5A1F]">
+                                                            {milestone.year}
+                                                        </span>
+                                                        <h3 className="text-xl font-bold text-[#F5F1E8]">
+                                                            {milestone.title}
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                                <p className="mt-3 text-sm leading-relaxed text-[#A7A29A]">
+                                                    {milestone.description}
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        {/* Empty space for alternating */}
+                                        <div className="hidden w-5/12 md:block" />
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                 </section>
 
                 {/* ========== CONTINUE THE JOURNEY CTA ========== */}
-                <section className="mx-auto max-w-4xl px-6 py-16">
-                    <div className="relative bg-gradient-to-br from-orange-500/20 via-red-500/10 to-transparent border border-orange-500/30 rounded-3xl p-10 text-center overflow-hidden">
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl" />
-                        <div className="absolute bottom-0 left-0 w-48 h-48 bg-red-500/10 rounded-full blur-2xl" />
-                        <h2 className="text-3xl md:text-4xl font-bold text-white relative z-10">🚀 The Journey Continues</h2>
-                        <p className="mt-4 text-lg text-gray-300 relative z-10">
-                            Be part of the next chapter. Join our community and grow with us.
-                        </p>
-                        <div className="mt-8 flex flex-wrap justify-center gap-5 relative z-10">
-                            <Link href="/guild">
-                                <button className="rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-8 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105">
-                                    Join the Guild
-                                    <ArrowRight className="inline ml-2 w-4 h-4" />
-                                </button>
-                            </Link>
-                            <Link
-                                href="https://www.youtube.com/@HelloGunda"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <button className="rounded-full border border-white/20 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/10">
-                                    Watch Videos
-                                </button>
-                            </Link>
+                <section className="border-y border-[#151515] px-6 py-24 md:px-12 lg:px-20">
+                    <div className="mx-auto max-w-5xl">
+                        <div className="border border-[#151515] bg-[#0F0F0F] px-8 py-16 text-center md:px-16 md:py-24">
+                            <Rocket className="mx-auto h-16 w-16 text-[#FF5A1F]" />
+                            <h2 className="mt-4 text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                                THE JOURNEY
+                                <br />
+                                <span className="text-[#FF5A1F]">CONTINUES</span>
+                            </h2>
+                            <p className="mx-auto mt-6 max-w-2xl text-lg text-[#A7A29A]">
+                                Be part of the next chapter. Join our community and grow with us.
+                            </p>
+
+                            <div className="mt-10 flex flex-wrap justify-center gap-4">
+                                <Link
+                                    href="/guild"
+                                    className="group inline-flex items-center bg-[#FF5A1F] px-10 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105"
+                                >
+                                    JOIN THE GUILD
+                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </Link>
+                                <Link
+                                    href="https://www.youtube.com/@HelloGunda"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center border border-[#F5F1E8] px-10 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                                >
+                                    WATCH VIDEOS
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 {/* ========== FOOTER ========== */}
-                <footer className="border-t border-white/10 py-12 text-center">
-                    <div className="max-w-6xl mx-auto px-6">
-                        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+                <footer className="border-t border-[#151515] px-6 py-12 md:px-12 lg:px-20">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
                             <div>
-                                <h3 className="text-2xl font-bold text-white">HELLO GUNDA</h3>
-                                <p className="text-sm text-gray-400">Gaming • Community • Journey</p>
+                                <p className="text-2xl font-black">HELLO GUNDA</p>
+                                <p className="text-sm text-[#A7A29A]">
+                                    Gaming • Community • Journey
+                                </p>
                             </div>
-                            <div className="flex gap-4">
-                                <Link href="/youtube" className="text-gray-400 hover:text-red-500 transition">
-                                    <PlayCircle className="w-6 h-6" />
+
+                            <div className="flex gap-6">
+                                <Link
+                                    href="/youtube"
+                                    className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                                >
+                                    <PlayCircle className="h-6 w-6" />
                                 </Link>
-                                <Link href="/instagram" className="text-gray-400 hover:text-orange-400 transition">
-                                    <MessageCircle className="w-6 h-6" />
+                                <Link
+                                    href="/instagram"
+                                    className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                                >
+                                    <MessageCircle className="h-6 w-6" />
+                                </Link>
+                                <Link
+                                    href="/contact"
+                                    className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                                >
+                                    Contact
+                                </Link>
+                                <Link
+                                    href="/"
+                                    className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                                >
+                                    Home
                                 </Link>
                             </div>
                         </div>
-                        <div className="mt-8 text-sm text-gray-500">
+
+                        <div className="mt-8 border-t border-[#151515] pt-8 text-center text-sm text-[#A7A29A]">
                             © 2026 Hello Gunda. All Rights Reserved.
                         </div>
                     </div>
                 </footer>
-
             </main>
         </>
     );

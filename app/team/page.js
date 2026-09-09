@@ -58,51 +58,6 @@ const teamMembers = [
       instagram: "#",
     }
   },
-  {
-    id: 4,
-    name: "HELLO RONIE",
-    role: "Core Member",
-    uid: "9876543210",
-    bio: "The strategist. Always has a plan for every match. Known for clutch plays and smart rotations.",
-    specialties: ["Strategy", "Team Coordination", "Ranked Matches"],
-    image: "/rahul.jpg",
-    color: "from-purple-400 to-pink-500",
-    icon: Target,
-    social: {
-      youtube: "#",
-      instagram: "#",
-    }
-  },
-  {
-    id: 5,
-    name: "CHINTU",
-    role: "Core Member",
-    uid: "8765432109",
-    bio: "The entertainer. Brings laughter to the squad with funny moments and epic dance battles.",
-    specialties: ["Funny Content", "Dance Battles", "Squad Play"],
-    image: "/chintu.jpg",
-    color: "from-red-400 to-rose-500",
-    icon: Sparkles,
-    social: {
-      youtube: "#",
-      instagram: "#",
-    }
-  },
-  {
-    id: 6,
-    name: "HELLO HARAMI",
-    role: "Core Member",
-    uid: "7654321098",
-    bio: "The powerhouse. Known for aggressive gameplay and one-tap headshots. Always ready for action.",
-    specialties: ["Aggressive Play", "One Taps", "Squad Fights"],
-    image: "/rawd.jpg",
-    color: "from-orange-400 to-red-500",
-    icon: Gamepad2,
-    social: {
-      youtube: "#",
-      instagram: "#",
-    }
-  },
 ];
 
 const teamStats = [
@@ -117,161 +72,264 @@ export default function TeamPage() {
     <>
       <Navbar />
 
-      <main className="min-h-screen bg-gradient-to-br from-[#0B0E14] via-[#141A24] to-[#1A1F2E] text-[#E8EDF5] font-sans overflow-x-hidden">
-
+      <main className="min-h-screen bg-[#080808] text-[#F5F1E8]">
         {/* ========== HERO ========== */}
-        <section className="relative min-h-[50vh] flex flex-col items-center justify-center px-6 pt-24 text-center overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-orange-500/10 via-red-500/10 to-transparent rounded-full blur-3xl animate-pulse" />
-          <div className="absolute top-10 right-10 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-1000" />
-          <div className="absolute bottom-10 left-10 w-56 h-56 bg-red-500/10 rounded-full blur-3xl animate-pulse delay-700" />
+        <section className="relative min-h-[60vh] overflow-hidden px-6 pt-32 pb-20 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid items-center gap-16 lg:grid-cols-2">
+              {/* LEFT */}
+              <div className="relative z-10">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                  The Squad
+                </p>
 
-          <div className="relative mb-8 p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-2xl shadow-orange-500/30">
-            <Users className="w-16 h-16 text-white" />
-          </div>
+                <h1 className="mt-4 text-6xl font-black leading-[0.95] tracking-tight md:text-7xl lg:text-8xl">
+                  OUR
+                  <br />
+                  <span className="text-[#FF5A1F]">TEAM</span>
+                </h1>
 
-          <h1 className="relative text-5xl md:text-7xl font-bold tracking-tight">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Team</span>
-          </h1>
-          <p className="relative mt-4 text-lg md:text-xl text-gray-300 max-w-2xl">
-            The squad behind HELLO GUNDA — united by gaming, driven by passion.
-          </p>
+                <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#A7A29A]">
+                  The squad behind HELLO GUNDA — united by gaming, driven by passion.
+                  Meet the players who make this community great.
+                </p>
 
-          <div className="relative mt-6 flex flex-wrap justify-center gap-4 text-sm text-gray-400">
-            <span className="flex items-center gap-1"><Users className="w-4 h-4 text-orange-400" /> {teamMembers.length} Core Members</span>
-            <span className="flex items-center gap-1"><MapPin className="w-4 h-4 text-red-400" /> India</span>
+                <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-[#A7A29A]">
+                  <span className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-[#FF5A1F]" />
+                    {teamMembers.length} Core Members
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-[#FF5A1F]" />
+                    India
+                  </span>
+                </div>
+
+                <div className="mt-10 flex flex-wrap gap-4">
+                  <Link
+                    href="/guild"
+                    className="group inline-flex items-center bg-[#FF5A1F] px-8 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105"
+                  >
+                    JOIN THE GUILD
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link
+                    href="https://www.youtube.com/@HelloGunda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center border border-[#F5F1E8] px-8 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                  >
+                    WATCH VIDEOS
+                  </Link>
+                </div>
+              </div>
+
+              {/* RIGHT */}
+              <div className="relative lg:pl-8">
+                <div className="relative aspect-[4/3] overflow-hidden border border-[#151515] bg-[#0F0F0F]">
+                  <Image
+                    src="/gunda.jpeg"
+                    alt="HELLO GUNDA Team - The Squad Behind the Community"
+                    fill
+                    className="object-cover object-center transition-transform duration-700 hover:scale-105"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+
+                  {/* Decorative overlay */}
+                  <div className="absolute bottom-0 left-0 bg-[#080808]/90 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FF5A1F]">
+                      Meet The Squad
+                    </p>
+                    <p className="text-sm font-bold">HELLO GUNDA</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ========== TEAM STATS ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-10">
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            {teamStats.map((stat) => {
-              const Icon = stat.icon;
-              return (
-                <div
-                  key={stat.label}
-                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center transition-all hover:-translate-y-1 hover:bg-white/10 hover:border-orange-400/50"
-                >
-                  <div className={`w-12 h-12 mx-auto rounded-full bg-gradient-to-r ${stat.gradient} flex items-center justify-center`}>
-                    <Icon className="w-6 h-6 text-white" />
+        <section className="border-y border-[#151515] px-6 py-20 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+              {teamStats.map((stat) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={stat.label}
+                    className="border-b border-[#151515] pb-6 text-center last:border-0 md:border-b-0 md:border-r md:pb-0"
+                  >
+                    <div
+                      className={`mx-auto flex h-14 w-14 items-center justify-center bg-gradient-to-r ${stat.gradient}`}
+                    >
+                      <Icon className="h-7 w-7 text-white" />
+                    </div>
+                    <p className="mt-3 text-4xl font-black text-[#FF5A1F] md:text-5xl">
+                      {stat.value}
+                    </p>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-[#A7A29A]">
+                      {stat.label}
+                    </p>
                   </div>
-                  <p className="mt-3 text-3xl font-bold text-white">{stat.value}</p>
-                  <p className="text-sm uppercase tracking-widest text-gray-400">{stat.label}</p>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ========== TEAM MEMBERS ========== */}
-        <section className="mx-auto max-w-6xl px-6 py-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-            Meet the <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">Squad</span>
-          </h2>
+        <section className="px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-16 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#FF5A1F]">
+                Leadership
+              </p>
+              <h2 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
+                MEET THE <span className="text-[#FF5A1F]">SQUAD</span>
+              </h2>
+            </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {teamMembers.map((member) => {
-              const Icon = member.icon;
-              return (
-                <div
-                  key={member.id}
-                  className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 text-center transition-all hover:-translate-y-2 hover:bg-white/10 hover:border-orange-400/50"
-                >
-                  {/* Avatar */}
-                  <div className="relative w-28 h-28 mx-auto overflow-hidden rounded-full border-2 border-white/20 shadow-xl">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {teamMembers.map((member) => {
+                const Icon = member.icon;
+                return (
+                  <div
+                    key={member.id}
+                    className="group border border-[#151515] bg-[#0F0F0F] p-6 text-center transition-all hover:-translate-y-2 hover:border-[#FF5A1F]"
+                  >
+                    {/* Avatar */}
+                    <div className="relative mx-auto h-28 w-28 overflow-hidden border-2 border-[#151515]">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="112px"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
 
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      sizes="112px"
-                      className="object-cover"
-                    />
+                    <div className="mt-4 flex items-center justify-center gap-2">
+                      <Icon className={`h-5 w-5 bg-gradient-to-r ${member.color} bg-clip-text text-transparent`} />
+                      <p className="text-xs uppercase tracking-widest text-[#A7A29A]">{member.role}</p>
+                    </div>
 
+                    <h3 className="mt-1 text-xl font-bold text-[#F5F1E8]">{member.name}</h3>
+                    <p className="text-sm text-[#A7A29A]">UID {member.uid}</p>
+
+                    <p className="mt-3 text-sm leading-relaxed text-[#A7A29A]">{member.bio}</p>
+
+                    <div className="mt-4 flex flex-wrap justify-center gap-2">
+                      {member.specialties.map((spec) => (
+                        <span key={spec} className="border border-[#151515] px-3 py-1 text-xs text-[#A7A29A]">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="mt-6 flex justify-center gap-3">
+                      <Link
+                        href={member.social.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg bg-[#0F0F0F] p-2 text-[#A7A29A] transition hover:bg-[#FF5A1F]/20 hover:text-[#FF5A1F]"
+                      >
+                        <PlaneLanding className="h-5 w-5" />
+                      </Link>
+                      <Link
+                        href={member.social.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="rounded-lg bg-[#0F0F0F] p-2 text-[#A7A29A] transition hover:bg-[#FF5A1F]/20 hover:text-[#FF5A1F]"
+                      >
+                        <PlayCircle className="h-5 w-5" />
+                      </Link>
+                    </div>
                   </div>
-
-                  <div className="mt-4 flex items-center justify-center gap-2">
-                    <Icon className={`w-5 h-5 text-transparent bg-clip-text bg-gradient-to-r ${member.color}`} />
-                    <p className="text-xs uppercase tracking-widest text-gray-400">{member.role}</p>
-                  </div>
-
-                  <h3 className="mt-1 text-xl font-bold text-white">{member.name}</h3>
-                  <p className="text-sm text-gray-400">UID {member.uid}</p>
-
-                  <p className="mt-3 text-sm text-gray-300 leading-relaxed">{member.bio}</p>
-
-                  <div className="mt-4 flex flex-wrap justify-center gap-2">
-                    {member.specialties.map((spec) => (
-                      <span key={spec} className="text-xs bg-white/10 px-3 py-1 rounded-full text-gray-300">
-                        {spec}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 flex justify-center gap-3">
-                    <Link
-                      href={member.social.youtube}
-                      target="_blank"
-                      className="p-2 rounded-lg bg-white/5 hover:bg-red-500/20 text-gray-400 hover:text-red-500 transition"
-                    >
-                      <PlaneLanding className="w-5 h-5" />
-                    </Link>
-                    <Link
-                      href={member.social.instagram}
-                      target="_blank"
-                      className="p-2 rounded-lg bg-white/5 hover:bg-orange-500/20 text-gray-400 hover:text-orange-400 transition"
-                    >
-                      <PlayCircle className="w-5 h-5" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
         {/* ========== JOIN THE TEAM CTA ========== */}
-        <section className="mx-auto max-w-4xl px-6 py-16">
-          <div className="relative bg-gradient-to-br from-orange-500/20 via-red-500/10 to-transparent border border-orange-500/30 rounded-3xl p-10 text-center overflow-hidden">
-            <div className="absolute top-0 right-0 w-48 h-48 bg-orange-500/10 rounded-full blur-2xl" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-red-500/10 rounded-full blur-2xl" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white relative z-10">👥 Want to Join the Team?</h2>
-            <p className="mt-4 text-lg text-gray-300 relative z-10">
-              We're always looking for passionate gamers to join our squad.
-              Play together. Grow together. Win together.
-            </p>
-            <Link href="/guild">
-              <button className="mt-8 relative z-10 rounded-full bg-gradient-to-r from-orange-500 to-red-500 px-10 py-4 font-semibold text-white shadow-lg shadow-orange-500/30 transition-all hover:scale-105">
-                Apply Now
-                <ArrowRight className="inline ml-2 w-4 h-4" />
-              </button>
-            </Link>
+        <section className="border-y border-[#151515] px-6 py-24 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="border border-[#151515] bg-[#0F0F0F] px-8 py-16 text-center md:px-16 md:py-24">
+              <Users className="mx-auto h-16 w-16 text-[#FF5A1F]" />
+              <h2 className="mt-4 text-4xl font-black leading-[1.1] tracking-tight md:text-5xl lg:text-6xl">
+                WANT TO JOIN
+                <br />
+                <span className="text-[#FF5A1F]">THE TEAM?</span>
+              </h2>
+              <p className="mx-auto mt-6 max-w-2xl text-lg text-[#A7A29A]">
+                We're always looking for passionate gamers to join our squad.
+                Play together. Grow together. Win together.
+              </p>
+
+              <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <Link
+                  href="/guild"
+                  className="group inline-flex items-center bg-[#FF5A1F] px-10 py-4 font-semibold text-[#080808] transition-all hover:bg-[#E63946] hover:scale-105"
+                >
+                  APPLY NOW
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/"
+                  className="inline-flex items-center border border-[#F5F1E8] px-10 py-4 font-semibold text-[#F5F1E8] transition-all hover:bg-[#F5F1E8] hover:text-[#080808]"
+                >
+                  BACK TO HOME
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ========== FOOTER ========== */}
-        <footer className="border-t border-white/10 py-12 text-center">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+        <footer className="border-t border-[#151515] px-6 py-12 md:px-12 lg:px-20">
+          <div className="mx-auto max-w-7xl">
+            <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
               <div>
-                <h3 className="text-2xl font-bold text-white">HELLO GUNDA</h3>
-                <p className="text-sm text-gray-400">Team • Gaming • Community</p>
+                <p className="text-2xl font-black">HELLO GUNDA</p>
+                <p className="text-sm text-[#A7A29A]">Team • Gaming • Community</p>
               </div>
-              <div className="flex gap-4">
-                <Link href="https://www.youtube.com/@HelloGunda" target="_blank" className="text-gray-400 hover:text-red-500 transition">
-                  <PlaneLanding className="w-6 h-6" />
+
+              <div className="flex gap-6">
+                <Link
+                  href="https://www.youtube.com/@HelloGunda"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  <PlaneLanding className="h-6 w-6" />
                 </Link>
-                <Link href="/instagram" className="text-gray-400 hover:text-orange-400 transition">
-                  <Plane className="w-6 h-6" />
+                <Link
+                  href="/instagram"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  <Plane className="h-6 w-6" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/"
+                  className="text-[#A7A29A] transition-colors hover:text-[#FF5A1F]"
+                >
+                  Home
                 </Link>
               </div>
             </div>
-            <div className="mt-8 text-sm text-gray-500">
+
+            <div className="mt-8 border-t border-[#151515] pt-8 text-center text-sm text-[#A7A29A]">
               © 2026 Hello Gunda. All Rights Reserved.
             </div>
           </div>
         </footer>
-
       </main>
     </>
   );
